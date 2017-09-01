@@ -1,4 +1,4 @@
-package br.com.ibfc.geracao.controllers;
+package br.com.ibfc.geracao.controller;
 
 import javax.transaction.Transactional;
 import javax.validation.Valid;
@@ -14,7 +14,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import br.com.ibfc.geracao.daos.AlunoDao;
 import br.com.ibfc.geracao.daos.TurmaDao;
-import br.com.ibfc.geracao.models.Aluno;
+import br.com.ibfc.geracao.model.Aluno;
 
 @Controller
 @RequestMapping("/aluno")

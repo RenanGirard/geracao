@@ -6,7 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 
-import br.com.ibfc.geracao.models.PaginatedList;
+import br.com.ibfc.geracao.model.PaginatedList;
 
 /**
  * It deals with the pagination details

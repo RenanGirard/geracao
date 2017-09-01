@@ -1,4 +1,4 @@
-package br.com.ibfc.geracao.controllers;
+package br.com.ibfc.geracao.controller;
 
 import javax.transaction.Transactional;
 import javax.validation.Valid;
@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import br.com.ibfc.geracao.daos.ResponsavelDao;
-import br.com.ibfc.geracao.models.Responsavel;
+import br.com.ibfc.geracao.model.Responsavel;
 
 @Controller
 @RequestMapping("/responsavel")

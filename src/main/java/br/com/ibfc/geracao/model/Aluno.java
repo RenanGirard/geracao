@@ -1,4 +1,4 @@
-package br.com.ibfc.geracao.models;
+package br.com.ibfc.geracao.model;
 
 import javax.persistence.Entity;
 import javax.persistence.OneToOne;

@@ -1,4 +1,4 @@
-package br.com.ibfc.geracao.controllers;
+package br.com.ibfc.geracao.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

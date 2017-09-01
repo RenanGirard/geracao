@@ -1,4 +1,4 @@
-package br.com.ibfc.geracao.models;
+package br.com.ibfc.geracao.model;
 
 import java.util.List;
 

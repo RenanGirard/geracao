@@ -7,8 +7,8 @@ import javax.persistence.PersistenceContext;
 
 import org.springframework.stereotype.Repository;
 
-import br.com.ibfc.geracao.models.Responsavel;
-import br.com.ibfc.geracao.models.PaginatedList;
+import br.com.ibfc.geracao.model.PaginatedList;
+import br.com.ibfc.geracao.model.Responsavel;
 
 @Repository
 public class ResponsavelDao {

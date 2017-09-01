@@ -7,8 +7,8 @@ import javax.persistence.PersistenceContext;
 
 import org.springframework.stereotype.Repository;
 
-import br.com.ibfc.geracao.models.Aluno;
-import br.com.ibfc.geracao.models.PaginatedList;
+import br.com.ibfc.geracao.model.Aluno;
+import br.com.ibfc.geracao.model.PaginatedList;
 
 @Repository
 public class AlunoDao {
