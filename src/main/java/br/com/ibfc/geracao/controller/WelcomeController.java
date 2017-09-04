@@ -12,9 +12,6 @@ public class WelcomeController {
 
 	@RequestMapping("/home")
 	public String welcome() {
-		//ModelAndView model = new ModelAndView("/welcome.html");
-		//model.addObject("message", this.message);
-		//System.out.println("TESTE HOME");
-		return "welcome";
+		return "welcometh";
 	}
 }
