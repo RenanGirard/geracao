@@ -1,10 +1,14 @@
 package br.com.ibfc.geracao.controller;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 import javax.transaction.Transactional;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.util.StringUtils;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,12 +23,13 @@ import br.com.ibfc.geracao.model.Professor;
 @RequestMapping("/professor")
 @Transactional
 public class ProfessorController {
+
 	@Autowired
 	private ProfessorDao professorDao;
 
 	@RequestMapping("/form")
 	public ModelAndView form(Professor professor) {
-		ModelAndView modelAndView = new ModelAndView("professor/form-add");
+		ModelAndView modelAndView = new ModelAndView("professor/form-addjsp");
 		return modelAndView;
 
 	}
@@ -40,15 +45,22 @@ public class ProfessorController {
 
 	@RequestMapping(method = RequestMethod.GET, value = "/{id}")
 	public ModelAndView load(@PathVariable("id") Integer id) {
-		ModelAndView modelAndView = new ModelAndView("professor/form-update");
+		ModelAndView modelAndView = new ModelAndView("professor/form-updatejsp");
 		modelAndView.addObject("professor", professorDao.findById(id));
 		return modelAndView;
 	}
 
 	@RequestMapping(method = RequestMethod.GET)
-	public ModelAndView list(@RequestParam(defaultValue = "0", required = false) int page) {
-		ModelAndView modelAndView = new ModelAndView("professor/list");
-		modelAndView.addObject("paginatedList", professorDao.paginated(page, 10));
+	public ModelAndView list(Professor professor) {
+		ModelAndView modelAndView = new ModelAndView("professor/listth");
+		List<Professor> DADOS = professorDao.all();
+
+		List<Professor> lista = DADOS.stream()
+				.filter(p -> professor.getId() == null || professor.getId().equals(p.getId()))
+				.filter(p -> StringUtils.isEmpty(professor.getNome()) || p.getNome().contains(professor.getNome()))
+				.collect(Collectors.toList());
+
+		modelAndView.addObject("professores", lista);
 		return modelAndView;
 	}
 
@@ -65,7 +77,7 @@ public class ProfessorController {
 			BindingResult bindingResult) {
 		professor.setId(id);
 		if (bindingResult.hasErrors()) {
-			return new ModelAndView("professor/form-update");
+			return new ModelAndView("professor/form-updatejsp");
 		}
 		professorDao.update(professor);
 		return new ModelAndView("redirect:/professor");

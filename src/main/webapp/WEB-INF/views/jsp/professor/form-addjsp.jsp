@@ -6,7 +6,7 @@
     <div class ="container text-center">      
     <h2 class="basic-title">Adicionar Professor ou Voluntário</h2>
       <form:form role="form" class="form-horizontal" commandName="professor" servletRelativeAction="/professor" method="POST">
-      	<%@include file="form-inputs.jsp" %>
+      	<%@include file="form-inputsjsp.jsp" %>
         <button type="submit" class="btn btn-primary">Submit</button>
       </form:form>	
     </div>

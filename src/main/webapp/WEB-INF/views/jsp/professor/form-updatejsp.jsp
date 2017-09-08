@@ -7,7 +7,7 @@
     <h2 class="basic-title">Add</h2>
       <form:form role="form" class="form-horizontal" commandName="professor" servletRelativeAction="/professor/${professor.id}" method="POST">
 		
-		<%@include file="form-inputs.jsp" %>
+		<%@include file="form-inputsjsp.jsp" %>
         <button type="submit" class="btn btn-primary">Submit</button>
 
       </form:form>	

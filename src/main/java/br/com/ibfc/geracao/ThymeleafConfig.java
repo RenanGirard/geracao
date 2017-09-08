@@ -10,6 +10,9 @@ import org.thymeleaf.spring4.SpringTemplateEngine;
 import org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver;
 import org.thymeleaf.spring4.view.ThymeleafViewResolver;
 
+import nz.net.ultraq.thymeleaf.LayoutDialect;
+
+
 @Configuration
 public class ThymeleafConfig {
 
@@ -34,6 +37,7 @@ public class ThymeleafConfig {
 		SpringTemplateEngine templateEngine = new SpringTemplateEngine();
 		// templateEngine.setEnableSpringELCompiler(true); // Compiled SpringEL
 		// should speed up executions
+		
 		templateEngine.setTemplateResolver(templateResolver());
 		return templateEngine;
 	}
@@ -61,5 +65,10 @@ public class ThymeleafConfig {
 		viewResolver.setViewNames(new String[] { "*jsp" });
 		viewResolver.setOrder(Integer.valueOf(2));
 		return viewResolver;
+	}
+	
+	@Bean
+	public LayoutDialect layoutDialect() {
+		return new LayoutDialect();
 	}
 }

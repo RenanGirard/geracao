@@ -29,8 +29,8 @@
 	<label class="control-label col-md-3" for="dataDeNascimento">Data
 		de Nascimento</label>
 	<div class="col-md-7">
-		<form:input class="form-control" path='dataDeNascimento' type='date' />
-		<form:errors path='dataDeNascimento' />
+		<form:input class="form-control" path="dataDeNascimento" type="date" />
+		<form:errors path="dataDeNascimento" />
 
 	</div>
 </div>

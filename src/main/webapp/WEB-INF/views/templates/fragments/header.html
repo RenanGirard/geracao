@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title th:include=":: #pageTitle" th:text="#{sistema.titulo}">Geração
+	Futuro</title>
+<!-- metas, link and scripts -->
+<meta charset="UTF-8" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<link
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"
+	rel="stylesheet" />
+
+<link
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"
+	rel="stylesheet" />
+
+<link
+	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"
+	rel="stylesheet" />
+
+<link href="../../resources/css/style.css"
+	th:href="@{/resources/css/style.css}" rel="stylesheet" />
+
+</head>
+<body>
+	<!-- INICIO NAV (alterar pra include)-->
+
+	<nav class="navbar navbar-inverse" th:fragment="header">
+		<div class="container-fluid">
+			<div class="navbar-header">
+
+				<button type="button" class="navbar-toggle collapsed"
+					data-toggle="collapse" data-target="#menu" aria-expanded="false">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="/">Geração Futuro</a>
+			</div>
+
+			<div class="collapse navbar-collapse" id="menu">
+				<ul class="nav navbar-nav">
+					<li class="dropdown"><a href="#" class="dropdown-toggle"
+						data-toggle="dropdown" role="button" aria-haspopup="true"
+						aria-expanded="false">Admin <span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="<c:url value='/professor/form'/>"><span
+									class="glyphicon glyphicon-plus-sign"></span> Voluntários</a></li>
+							<li><a href="<c:url value='/professor'/>"><span
+									class="glyphicon glyphicon-menu-hamburger"></span> Voluntários</a></li>
+							<li role="separator" class="divider"></li>
+							<li><a href="<c:url value='/aluno/form'/>"><span
+									class="glyphicon glyphicon-plus-sign"></span> Aluno</a></li>
+							<li><a href="<c:url value='/aluno'/>"><span
+									class="glyphicon glyphicon-menu-hamburger"></span> Aluno</a></li>
+							<li role="separator" class="divider"></li>
+							<li><a href="<c:url value='/turma/form'/>"><span
+									class="glyphicon glyphicon-plus-sign"></span> Turmas</a></li>
+							<li><a href="<c:url value='/turma'/>"><span
+									class="glyphicon glyphicon-menu-hamburger"></span> Turmas</a></li>
+							<li role="separator" class="divider"></li>
+
+							<li><a href="<c:url value='/responsavel/form'/>"><span
+									class="glyphicon glyphicon-plus-sign"></span> Responsaveis</a></li>
+							<li><a href="<c:url value='/responsavel'/>"><span
+									class="glyphicon glyphicon-menu-hamburger"></span> Responsaveis</a></li>
+							<li role="separator" class="divider"></li>
+						</ul></li>
+				</ul>
+
+			</div>
+		</div>
+	</nav>
+
+	<!-- FINAL NAV -->
+
+	<script src="<c:url value='/assets/js/jquery-2.1.4.min.js'/>"></script>
+	<script src="<c:url value='/assets/js/bootstrap.min.js'/>"></script>
+</body>
+</html>
